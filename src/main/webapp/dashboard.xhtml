@@ -1,0 +1,201 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<head>
+
+
+
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+          crossorigin="anonymous"/>
+
+    <style>
+
+        .logo {
+            width: 50px;
+            cursor: pointer;
+        }
+
+        .nav2 {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: rgba(24, 21, 21, 0.705);
+            align-items: center;
+
+        }
+
+        .ul1,
+        .ul2 {
+            display: flex;
+            gap: 20px;
+            font-size: 1.2em;
+            padding-right: 20px;
+        }
+
+        .li1,
+        .li2 {
+            list-style: none;
+            padding: 2px;
+            width: 120px;
+            text-align: center;
+            border-radius: 50px;
+        }
+
+        .li1:hover,
+        .li2:hover {
+            background-color: #4A95C2;
+            border-radius: 50px;
+            transition: 0.4s;
+            color: #fff;
+        }
+
+        .ul1 .li1 a,
+        .ul2 .li2 a {
+            text-decoration: none;
+            color: rgb(236, 233, 233);
+        }
+
+        .link-down {
+            text-decoration: none;
+            color: rgb(206, 216, 224);
+            font-size: 1.2em;
+            padding: 12px;
+            background-color: #4A95C2;
+            border-radius: 30px;
+        }
+
+        .link-down:hover {
+            color: #fff;
+        }
+
+        .other {
+            background-color: #fff;
+            width: 200px;
+            height: 0px;
+            float: right;
+            position: relative;
+            top: 1px;
+            left: -20px;
+            opacity: 0%;
+            display: none;
+        }
+
+        .other li {
+            padding: 10px;
+            border-bottom: 2px solid rgb(170, 164, 164);
+            list-style: none;
+            text-align: center;
+        }
+
+        .other li a:hover {
+            color: rgb(36, 175, 36);
+        }
+
+        .other li a {
+            text-decoration: none;
+            color: rgb(2, 2, 2);
+        }
+
+        .avatar-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .avatar-text {
+            color: #fff;
+            font-size: 1.2em;
+        }
+
+        .avatar-dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 3;
+            display: none;
+        }
+
+        .avatar-dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+    </style>
+</head>
+
+<body>
+<h:form>
+    <nav class="nav2">
+        <a herf="home1.xhtml">
+            <div class="logo"><img src="./images/logo.jpeg" width="150" height="50" alt="Logo Not Found"/></div>
+        </a>
+        <ul class="ul2">
+            <li class="li2"><h:commandLink action="home1">Home</h:commandLink></li>
+            <li class="li2"><h:commandLink action="contents1">Contents</h:commandLink></li>
+            
+            <li class="li2"><h:commandLink action="aboutus1">About Us</h:commandLink></li>
+            
+            <li class="li2"><h:commandLink action="ContactUs1">Contact Us</h:commandLink></li>
+        </ul>
+        <div class="avatar-dropdown">
+            <div class="avatar-container">
+        <img class="avatar" src="images/image2.jpeg" alt="Avatar" />
+        <div class="avatar-text" id="username">${sessionScope.username}</div>
+    </div>
+  
+            <div class="dropdown-content">
+                <a href="Users.jsp" >Profile</a>
+                <a href="Userpassword.jsp" >Update Password</a>
+                <a href="login.html">Logout</a>
+            </div>
+        </div>
+        
+    </nav>
+</h:form>
+
+  <script>
+        // Function to retrieve the value of a session attribute
+        function getSessionAttribute(name) {
+            return localStorage.getItem(name);
+        }
+
+        // Retrieve the username from the session
+        const username = getSessionAttribute('username');
+
+        // Display the username in the avatar
+        if (username) {
+            document.getElementById('username').textContent = username;
+        }
+        
+    </script>
+</body>
+</html>

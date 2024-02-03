@@ -1,0 +1,386 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<head>
+
+  <title></title>
+
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+      font-family: sans-serif, 'Poppins';
+    }
+
+    body {
+      background-color: #dee0e3;
+    }
+
+    .heading {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .heading h1 {
+      font-size: 50px;
+      color: #36455c;
+      margin-bottom: 10px;
+    }
+
+    .heading p {
+      font-size: 20px;
+      align-items: center;
+      width: 85%;
+      margin: auto;
+    }
+
+    .about-us {
+      display: flex;
+      align-items: center;
+      width: 85%;
+      margin: auto;
+    }
+
+    .about-us img {
+      flex: 0 50%;
+      max-width: 50%;
+      height: auto;
+    }
+
+    .content {
+      padding: 35px;
+    }
+
+    .content h2 {
+      color: #36455c;
+      font-size: 24px;
+      margin: 15px 0px;
+      ;
+    }
+
+    .content p {
+      color: #666;
+      font-size: 18px;
+      line-height: 1.5;
+      margin: 15px 0px;
+    }
+
+    .read-more-btn {
+      color: #fff;
+      background-color: #0084ff;
+      display: inline-block;
+      border: none;
+      border-radius: 5px;
+      padding: 12px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .read-more-btn:hover {
+      background-color: #006dd6;
+    }
+
+    /* cards code */
+
+    .container {
+      position: relative;
+      width: 1100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 30px;
+    }
+
+    .container .card {
+      position: relative;
+      max-width: 300px;
+      height: 300px;
+      background: #fff;
+      margin: 20px 30px;
+      padding: 20px 15px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5);
+      transition: 0.4s ease-in-out;
+    }
+
+    .container .card:hover {
+      height: 480px;
+    }
+
+    .container .card .imgBx {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container .card .imgBx img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .container .card .content {
+      position: relative;
+      margin-top: -140px;
+      padding: 4px 6px;
+      text-align: center;
+      color: #111;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.3s ease-in-out;
+    }
+
+    .container .card:hover .content {
+      visibility: visible;
+      opacity: 1;
+      margin-top: -20px;
+      transition-delay: 0.3s;
+    }
+    
+    
+    
+    
+    
+    <!-- footer css -->
+    
+            
+.footer-clean {
+  padding: 80px 0;
+  background-color: #fff;
+  color: #4b4c4d;
+}
+
+.footer-clean h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.footer-clean ul {
+  padding: 0;
+  list-style: none;
+  line-height: 1.6;
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.footer-clean ul a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.footer-clean ul a:hover {
+  opacity: 1;
+}
+
+.footer-clean .item {
+  text-align: right;
+}
+
+@media (max-width: 767px) {
+  .footer-clean .item {
+    text-align: center;
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-clean .item {
+    text-align: center;
+  }
+}
+
+.footer-clean .item.social {
+  text-align: center;
+}
+
+.footer-clean .item.social > a {
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  margin-left: 10px;
+  margin-top: 22px;
+  color: inherit;
+  opacity: 0.75;
+}
+
+.footer-clean .item.social > a:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 991px) {
+  .footer-clean .item.social > a {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-clean .item.social > a {
+    margin-top: 10px;
+  }
+}
+
+.footer-clean .logo {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+  background-image: url(images/logo.png); /* Replace with your logo image path */
+  background-size: cover;
+}
+
+.footer-clean .logo-text {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.footer-clean .col-lg-3.item.social {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+    
+    .container12 {
+  background-color: #ACB7ED; /* Set your desired background color */
+  padding: 50px;
+}
+
+
+.p{
+background-color: #ACB7ED; /* Set your desired background color */
+  padding: 50px;
+}
+  </style>
+</head>
+
+<body>
+ <ui:decorate template="base3.xhtml">
+        <ui:define name="dashboardcomponent">
+      <div class="heading">
+        <h1>About Us</h1>
+        <p>The way to get started is to quit talking and begin doing.</p>
+      </div>
+      <section class="about-us">
+        <img src="images/aboutus.jpg" />
+        <div class="content">
+          <h1>Welcome to our Education Management Service!</h1>
+          <br></br>
+          <p>Educational management refers to the administration of the education system in which a group combines human and material resources to supervise, plan, strategise, and implement structures to execute an education system .</p>
+          <p>A system that monitors and manages the distribution and allocation of educational resources in the programs offered by an institute is called Educational Management Information System (EMIS). It helps to plan, manage and strategize to implement work processes to execute the education system efficiently</p>
+        </div>
+      </section>
+      
+      
+      
+      <br></br>
+      <br></br>
+      <div class="container">
+        <div class="card">
+          <div class="container">
+            <div class="imgBx">
+              <img src="./images/name1.jpg" />
+            </div>
+            <div class="content">
+              <h1 style="color: #7A40F0;">2100030875</h1>
+              <p style="color: #000000;">My Id No:2100030875 , I am Here to develop Backend using tecnology using JSP , Oracle and JDBC connectivity.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="container">
+            <div class="imgBx">
+              <img src="./images/name2.jpg" />
+            </div>
+            <div class="content">
+              <h1  style="color: #EF67F6;" >2100030085</h1>
+              <p style="color: #000000;">My Id No:2100030085 , I am Here to develop the front end using of different Technology like xhtml , jsp , css. which will make beautiful website.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="container">
+            <div class="imgBx">
+              <img src="./images/name3updated.jpg" />
+            </div>
+            <div class="content">
+              <h1 style="color: #F23B3B;" >2100031947</h1>
+              <p style="color: #000000;">My Id No:2100031947 , I am Here to develop the front end using of different Technology like xhtml , jsp , css. which will make beautiful website.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      
+       <div class="footer-clean">
+        <footer>
+          <div class="container12">
+            <div class="row justify-content-center">
+              <div class="col-sm-4 col-md-3 item">
+                <h3>Services</h3>
+                <ul>
+                  <li><a href="home1.xhtml">Home</a></li>
+                 <li><a href="contents1.xhtml">Contents</a></li>
+                  <li><a href="#">Hosting</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-4 col-md-3 item">
+                <h3>About</h3>
+                <ul>
+                  <li><a href="aboutus1.xhtml">AboutUs</a></li>
+                  <li><a href="ContactUs1.xhtml">Contact Us</a></li>
+                  <li><a href="#">Legacy</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-4 col-md-3 item">
+                
+                
+              </div>
+              <div class="col-lg-3 item social">
+                <a href="#" class="logo"></a>
+                <span class="logo-text">BrainHone</span>
+                <a href="#"><i class="icon ion-social-facebook"></i></a>
+                <a href="#"><i class="icon ion-social-twitter"></i></a>
+                <a href="#"><i class="icon ion-social-snapchat"></i></a>
+                <a href="#"><i class="icon ion-social-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </ui:define>
+  </ui:decorate>
+</body>
+
+</html>

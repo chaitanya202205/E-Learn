@@ -1,0 +1,481 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+
+    <style>
+    
+    
+    
+    body#gray-background {
+         /* Replace with the desired gray color */
+        font-family: 'Visby CF', sans-serif !important;
+    }
+
+ #some-background {
+    background-color: #EBD58A; /* Replace with your desired background color */
+    color: #ffffff; /* Set the text color to contrast with the background */
+    padding: 39px; /* Optional: Add some padding for better readability */
+    border-radius: 90px; /* Add rounded corners to create a card-like shape */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a box-shadow to simulate the card effect */
+  }
+  
+  
+  
+  
+  
+  
+
+ #some1-background {
+    background-color: #FFD6D6; /* Replace with your desired background color */
+    color: #ffffff; /* Set the text color to contrast with the background */
+    padding: 30px; /* Optional: Add some padding for better readability */
+    border-radius: 90px; /* Add rounded corners to create a card-like shape */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+ #some2-background {
+    background-color: #BCFFEC; /* Replace with your desired background color */
+     /* Set the text color to contrast with the background */
+    padding: 0px; /* Optional: Add some padding for better readability */
+    border-radius: 90px; /* Add rounded corners to create a card-like shape */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+    
+    
+    
+        .container {
+            width: 100%;
+            height: 95vh;
+            background-image: linear-gradient(rgba(0,0,0,0.7) , rgba(0,0,0,0.7)),url(images/image3.jpeg);
+            background-position: center;
+            background-size: cover;
+        }
+
+        .container hover {
+            transform:translateY(-10px);
+        }
+
+        .row {
+            display: flex;
+            height: 88%;
+            align-items: center;
+        }
+
+        .colu {
+            flex-basis: 50%;
+            display: flex; /* Added */
+            flex-wrap: wrap; /* Added */
+            justify-content: space-between; /* Added */
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 100px;
+            line-height: 15px;
+        }
+
+        p {
+            color: #fffff;
+            font-size: 28px;
+            line-height: 30px;
+            
+        }
+
+        .card {
+            width: 400px;
+            height: 400px;
+            display: inline-block;
+            border-radius: 20px;
+            padding: 70px 20px;
+            box-sizing: border-box;
+            cursor: pointer;
+            margin: 20px 78px;
+            background-position: center;
+            background-size: cover;
+            transition: transform 0.5s;
+        }
+
+        .card1 {
+            background-image: url(images/images4.jpeg);
+        }
+
+        .card2 {
+            background-image: url(images/images5.jpeg);
+        }
+
+        .card3 {
+            background-image: url(images/images6.jpeg);
+        }
+
+        .card4 {
+            background-image: url(images/image2.jpeg);
+        }
+
+        .card:hover {
+            transform:translateY(-10px);
+        }
+        
+        
+        .col{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        
+        }
+        
+        
+        
+        
+        
+.footer-clean {
+  padding: 80px 0;
+  background-color: #fff;
+  color: #4b4c4d;
+}
+
+.footer-clean h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.footer-clean ul {
+  padding: 0;
+  list-style: none;
+  line-height: 1.6;
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.footer-clean ul a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.footer-clean ul a:hover {
+  opacity: 1;
+}
+
+.footer-clean .item {
+  text-align: right;
+}
+
+@media (max-width: 767px) {
+  .footer-clean .item {
+    text-align: center;
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-clean .item {
+    text-align: center;
+  }
+}
+
+.footer-clean .item.social {
+  text-align: center;
+}
+
+.footer-clean .item.social > a {
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  margin-left: 10px;
+  margin-top: 22px;
+  color: inherit;
+  opacity: 0.75;
+}
+
+.footer-clean .item.social > a:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 991px) {
+  .footer-clean .item.social > a {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-clean .item.social > a {
+    margin-top: 10px;
+  }
+}
+
+.footer-clean .logo {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+  background-image: url(images/logo.png); /* Replace with your logo image path */
+  background-size: cover;
+}
+
+.footer-clean .logo-text {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.footer-clean .col-lg-3.item.social {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+    
+  .container12 {
+  background-color: #ACB7ED; /* Set your desired background color */
+  padding: 60px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+    
+    
+    
+    <!-- css for startting contetnt and image  -->
+        
+
+ 
+ span{
+ color:orange;
+ 
+ }
+ 
+ 
+  .img-fluid
+ {
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  margin-left: 30px;
+  margin-top: 5px;
+  }
+ 
+ @keyframes floating {
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(0, 25px); }
+  100%   { transform: translate(0, -0px); }   
+}
+ 
+ 
+ 
+ 
+    </style>
+    
+</head>
+
+<body>
+    <ui:decorate template="base3.xhtml">
+        <ui:define name="dashboardcomponent">
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+ <div id="carouselExampleCaptions" class="carousel slide" color="black">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" style="color:black;"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" style="color:black;">
+      <img src="./images/image7.jpeg" class="d-block w-100" alt="..." />
+      <div class="carousel-caption d-none d-md-block">
+        <h2 style="color:black;">Start Learning here</h2>
+        <h2>Education helps to build character as you learn about different cultures, languages, and how other people think as well as live.</h2>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="./images/image9.jpg"  alt="..." />
+      <div class="carousel-caption d-none d-md-block">
+        <h3 style="color:black;">Let's Go to Explore</h3>
+        <h2>Life is like riding a bicycle. To keep your balance, you must keep moving.</h2>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="./images/image10.jpeg" class="d-block w-100" alt="..." />
+      <div class="carousel-caption d-none d-md-block">
+        <h2 style="color:black;">Education is the key</h2>
+        <h2 style="color:black;">Education is one thing no one can take away from you.</h2>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+ <br></br>
+            <br></br>
+            <br></br>
+            <div class="container">
+                
+                <div class="col">
+
+                    <div class="card card1">
+                        <h5> book 1</h5>
+                        <p>           <br></br>     <br></br>                        </p> 
+               
+                    </div>
+                    <br></br>
+                    <div class="card card2">
+                        <h5> be value</h5>
+                        <p>                                                                                                      </p>
+                    </div>
+
+ <br></br>
+                    <div class="card card3">
+                        <h5> book 1</h5>
+                        <p>      <br></br>         <br></br>                      </p>
+                    </div>
+
+
+ <br></br>
+                    <div class="card card4">
+                        <h5> book 1</h5>
+                        <p>                                  </p>
+                    </div>
+ <br></br>
+                </div>
+            </div>
+            <br></br>
+            <br></br>
+    <section class="content mb-5" id="some-background">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1 class="text-center">
+          Brain Hone Learning Online
+        </h1>
+        <h4 style="text-align: center; color: #F15929;">Best Online Learning App</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-6 mt-5">
+        <img class="img-fluid bigger-image" src="images/home4img.jpeg" alt="" />
+      </div> 
+      <div class="col-12 col-md-4 pt-0 pt-md-5" style="margin-left: 40px;">
+        <img src="https://iddigital.id/public/img/backend/section4-images-2.png" class="text-right" style="clear: right; max-width: 30%; height: auto;" alt="" />
+        <h2 class="sectionbelow text-left" style="color: #F15929;">
+          Learn Here
+        </h2>
+        <h5 class="text-left">
+          It often happens that all the running around, stress and everything else that late August and early September brings can overshadow the importance of setting up our kids for success at education
+        </h5>
+        <a href="#" class=""></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="content  mb-5 pb-5" id="some1-background">
+  <div class="container123">
+    <div class="row justify-content-center my-auto ">
+      <div class="col-12 col-md-6 px-auto my-auto">
+        <h2 class="sectionbelow" style="color: #F15929;">
+          Learn in Different Ways
+        </h2>
+        <h5 class="text-left">
+          We believe in empowering the next generation of leaders through innovative teaching methods, personalized attention, and a comprehensive curriculum. Our passionate educators are committed to creating a positive and engaging classroom experience, inspiring a love for learning that extends beyond the classroom. With a focus on critical thinking, creativity, and practical skills, we aim to prepare our students for a bright future. </h5>
+        <a href="#" class="ml-2"></a>
+      </div>
+      <div class="col-12 col-md-6 ">
+        <img class="img-fluid bigger-image"  src="images/home2img.jpeg"  alt="" />
+      </div>
+    </div>
+  </div>
+</section>
+
+
+	
+	<section class="content  mt-2 pb-md-5 mb-5 mb-md-5" id="some2-background">
+  <div class="container123">
+    <div class="row justify-content-center my-auto">
+      <div class="col-12 col-md-6">
+        <img class="img-fluid bigger-image" src="images/home3img.jpeg" alt="" />
+      </div>
+      <div class="col-12 col-md-6 pt-5"  >
+        <h2 class="sectionbelow text-left" style="color: #F15929;">
+          Valueable Learning Experince
+        </h2>
+        <h5 class="text-left  ">
+         Our learning environment encourages exploration and experimentation, allowing students to discover the methods that resonate best with them. Whether they learn through hands-on experiences, visual aids, auditory inputs, collaborative group work, or individual reflection . </h5>
+        <a href="#" class="ml-2"></a>
+      </div>
+    </div>
+  </div>
+</section>
+	
+	
+
+	
+	
+            
+       
+            <div class="footer-clean">
+        <footer>
+          <div class="container12">
+            <div class="row justify-content-center">
+              <div class="col-sm-4 col-md-3 item">
+                <h3>Services</h3>
+                <ul>
+                  <li><a href="home1.jsf">Home</a></li>
+                  <li><a href="contents1.jsf">Contents</a></li>
+                  <li><a href="#">Hosting</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-4 col-md-3 item">
+                <h3>About</h3>
+                <ul>
+                  <li><a href="aboutus1.jsf">AboutUs</a></li>
+                  <li><a href="ContactUs1.jsf">Contact Us</a></li>
+                  <li><a href="#">Legacy</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-4 col-md-3 item">
+                
+                
+              </div>
+              <div class="col-lg-3 item social">
+                <a href="#" class="logo"></a>
+                <span class="logo-text">Brain Hone</span>
+                <a href="#"><i class="icon ion-social-facebook"></i></a>
+                <a href="#"><i class="icon ion-social-twitter"></i></a>
+                <a href="#"><i class="icon ion-social-snapchat"></i></a>
+                <a href="#"><i class="icon ion-social-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+      
+      
+        </ui:define>
+    </ui:decorate>
+</body>
+
+</html>

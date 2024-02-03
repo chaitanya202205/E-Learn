@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login/SignUp</title>
+
+
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(#000000, #A2A29C,#A2C9EC);
+    overflow: hidden;
+}
+
+.wrapper {
+    position: relative;
+    width: 400px;
+    height: 510px;
+    animation: color 12s ease-in-out infinite;
+}
+
+.form-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 110%;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+}
+
+.wrapper.animate-signUp .form-wrapper.sign-in {
+    transform: rotate(7deg);
+    animation: animateRotate .7s ease-in-out forwards;
+    animation-delay: .3s;
+}
+
+.wrapper.animate-signIn .form-wrapper.sign-in {
+    animation: animateSignIn 1.5s ease-in-out forwards;
+}
+
+@keyframes animateSignIn {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-500px);
+    }
+
+    100% {
+        transform: translateX(0) rotate(7deg);
+    }
+}
+
+.wrapper .form-wrapper.sign-up {
+    transform: rotate(7deg);
+}
+
+.wrapper.animate-signIn .form-wrapper.sign-up {
+    animation: animateRotate .7s ease-in-out forwards;
+    animation-delay: .3s;
+}
+
+@keyframes animateRotate {
+    0% {
+        transform: rotate(7deg);
+    }
+
+    100% {
+        transform: rotate(0);
+        z-index: 1;
+    }
+}
+
+.wrapper.animate-signUp .form-wrapper.sign-up {
+    animation: animateSignUp 1.5s ease-in-out forwards;
+}
+
+@keyframes animateSignUp {
+    0% {
+        transform: translateX(0);
+        z-index: 1;
+    }
+
+    50% {
+        transform: translateX(500px);
+    }
+
+    100% {
+        transform: translateX(0) rotate(7deg);
+    }
+}
+
+h2 {
+    font-size: 30px;
+    color: #555;
+    text-align: center;
+}
+
+.input-group {
+    position: relative;
+    width: 320px;
+    margin: 30px 0;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #333;
+    padding: 0 5px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-group input {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    color: #333;
+    padding: 0 10px;
+    background: transparent;
+    border: 1px solid #333;
+    outline: none;
+    border-radius: 5px;
+}
+
+.input-group input:focus~label,
+.input-group input:valid~label {
+    top: 0;
+    font-size: 12px;
+    background: #fff;
+}
+
+.forgot-pass {
+    margin: -15px 0 15px;
+}
+
+.forgot-pass a {
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.forgot-pass a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(to right, #2196f3, #e91e63);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .4);
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.sign-link {
+    font-size: 14px;
+    text-align: center;
+    margin: 25px 0;
+}
+
+.sign-link p {
+    color: #333;
+}
+
+.sign-link p a {
+    color: #e91e63;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.sign-link p a:hover {
+    text-decoration: underline;
+}
+@keyframes color{
+
+0%{
+     background-position:0% 50%;
+}
+
+50%{
+	background-position: 100% 50%;
+}
+
+100%{
+background-position: 0% 50%;
+
+}
+}
+
+
+.wrapper span {
+	position: fixed;
+	bottom: -180px;
+	height: 60px;
+	width: 50px;
+	z-index: -1;
+	background-color: #18191f;
+	box-shadow: 0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff, 0 0 200px #0072ff;
+	animation: animate 10s linear infinite;
+}
+.wrapper span:nth-child(1) {
+	left: 60px;
+	animation-delay: 0.6s;
+}
+.wrapper span:nth-child(2) {
+	left: 10%;
+	animation-delay: 3s;
+	width: 60px;
+	height: 60px;
+}
+.wrapper span:nth-child(3) {
+	left: 20%;
+	animation-delay: 2s;
+}
+.wrapper span:nth-child(4) {
+	left: 30%;
+	animation-delay: 5s;
+	width: 80px;
+	height: 80px;
+}
+.wrapper span:nth-child(5) {
+	left: 40%;
+	animation-delay: 1s;
+}
+.wrapper span:nth-child(3) {
+	left: 20%;
+	animation-delay: 2s;
+}
+.wrapper span:nth-child(4) {
+	left: 30%;
+	animation-delay: 5s;
+	width: 80px;
+	height: 80px;
+}
+.wrapper span:nth-child(5) {
+	left: 40%;
+	animation-delay: 1s;
+}
+.wrapper span:nth-child(6) {
+	left: 50%;
+	animation-delay: 7s;
+}
+.wrapper span:nth-child(7) {
+	left: 60%;
+	animation-delay: 6s;
+	width: 100px;
+	height: 100px;
+}
+.wrapper span:nth-child(8) {
+	left: 70%;
+	animation-delay: 8s;
+}
+.wrapper span:nth-child(9) {
+	left: 80%;
+	animation-delay: 6s;
+	width: 90px;
+	height: 90px;
+}
+.wrapper span:nth-child(10) {
+	left: 90%;
+	animation-delay: 4s;
+}
+.wrapper span:nth-child(8) {
+	left: 70%;
+	animation-delay: 8s;
+}
+.wrapper span:nth-child(9) {
+	left: 80%;
+	animation-delay: 6s;
+	width: 90px;
+	height: 90px;
+}
+.wrapper span:nth-child(10) {
+	left: 90%;
+	animation-delay: 4s;
+}
+.banner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+.content h2 b {
+	-webkit-text-fill-color: transparent;
+	-webkit-text-stroke-width: 3px;
+	-webkit-text-stroke-color: #fff;
+	font-family: montserrat;
+	font-size: 80px;
+	text-transform: uppercase;
+	letter-spacing: 12px;
+}
+@keyframes animate {
+	0% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	80% {
+		opacity: .7;
+	}
+	100% {
+		transform: translateY(-800px) rotate(360deg);
+		opacity: 0;
+	}
+}
+
+
+
+
+
+
+
+<!-- navbar-->
+
+
+
+   
+.logo{
+width:50px;
+cursor: pointer;
+}
+      .nav2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgba(24, 21, 21, 0.705);
+    align-items: center;
+    width: 100%;
+    z-index: 9999;
+}
+.ul1,
+.ul2 {
+    display: flex;
+    gap: 20px;
+    font-size: 1.2em;
+    padding-right: 20px;
+}
+.li1,
+.li2 {
+    list-style: none;
+    padding: 2px;
+    width: 120px;
+    text-align: center;
+    border-radius: 50px;
+}
+.li1:hover,
+.li2:hover {
+    background-color: #4A95C2;
+    border-radius: 50px;
+    transition: 0.4s;
+    color: #fff;
+}
+.ul1 .li1 a,
+.ul2 .li2 a {
+    text-decoration: none;
+    color: rgb(236, 233, 233);
+}
+.link-down {
+    text-decoration: none;
+    color: rgb(206, 216, 224);
+    font-size: 1.2em;
+    padding: 12px;
+    background-color: #4A95C2;
+    border-radius: 30px;
+}
+.link-down:hover {
+    color: #fff;
+}
+      
+      .other {  
+     background-color: #fff;  
+     width: 200px;  
+     height: 0px;  
+     float: right;  
+     position: relative;  
+     top: 1px;  
+     left: -20px;  
+     opacity: 0%;  
+     display: none;  
+    }  
+    .other li {  
+     padding: 10px;  
+     border-bottom: 2px solid rgb(170, 164, 164);  
+     list-style: none;  
+     text-align: center;  
+    }
+
+.other li a:hover {
+color: rgb(36, 175, 36);
+}
+.other li a {
+text-decoration: none;
+color: rgb(2, 2, 2);
+}
+
+
+
+
+
+.input-group .password-toggle {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+</style>
+</head>
+<body>
+
+<form>
+	<nav class="nav2" onclick="over()">
+	    <a href="#">
+	        <div class="logo">
+	            <img src="./images/logo.jpeg" width="150" height="50" alt="Logo Not Found" />
+	        </div>
+	    </a>
+	    <ul class="ul2">
+	        <li class="li2">
+	            <a href="home.xhtml">Home</a>
+	        </li>
+	        <li class="li2">
+	            <a href="content.xhtml">Contents</a>
+	        </li>
+	        <li class="li2">
+	            <a href="Aboutus.xhtml">About Us</a>
+	        </li>
+	        <li class="li2">
+	            <a href="ContactUs.xhtml">Contact Us</a>
+	        </li>
+	    </ul>
+	    <li class="li2">
+	        <a href="login.html">Login/SignUp</a>
+	    </li>
+	</nav>
+</form>
+
+
+
+<div class="wrapper">
+   <div class="wrapper">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+</div>
+
+<div class="banner">
+	<div class="content">
+		<h2><b>Animation</b></h2>
+	</div>
+</div>
+    <div class="form-wrapper sign-up">
+      <form action="Register.jsp" method="post">
+        <h2>Sign Up</h2>
+         <div class="input-group">
+          <input type="text" name="fname" minlength="3" required title="Name must be at least 5 characters long">
+          <label for="">FirstName</label>
+        </div>
+         <div class="input-group">
+          <input type="text" name="lname" minlength="3" required>
+          <label for="">LastName</label>
+        </div>
+        
+        
+        <div class="input-group">
+          <input type="text" name="username" required>
+          <label for="">Username</label>
+        </div>
+        <div class="input-group">
+          <input type="email" name="email" required>
+          <label for="">Email</label>
+        </div>
+        
+      
+        <div class="input-group">
+          <input type="password" name="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]+$" required>
+          
+          <label for="">Password</label>
+          <i class="password-toggle fas fa-eye-slash"></i>
+        </div>
+        <button type="submit" class="btn" >Sign Up</button>
+        <div class="sign-link">
+          <p>Already have an account? <a class="signIn-link">Sign In</a></p>
+        </div>
+      </form>
+    </div>
+
+    <div class="form-wrapper sign-in">
+      <form action="Login.jsp" method="post">
+        <h2>Login</h2>
+        <div class="input-group">
+          <input type="text" name="username" required>
+          <label for="">Username</label>
+        </div>
+        <div class="input-group">
+          <input type="password" name="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]+$" required>
+          <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
+          <label for="">Password</label>
+        </div>
+        <div class="forgot-pass">
+          <a href="#">Forgot Password?</a>
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <div class="sign-link">
+          <p>Don't have an account? <a class="signUp-link">Sign Up</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+
+  <script>
+
+
+
+  const passwordInput = document.getElementById('password');
+  const passwordToggle = document.querySelector('.password-toggle');
+
+  passwordToggle.addEventListener('click', function() {
+      const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordInput.setAttribute('type', type);
+
+      const icon = this.classList.contains('fa-eye-slash') ? 'fa-eye' : 'fa-eye-slash';
+      this.classList.toggle('fa-eye-slash');
+      this.classList.toggle('fa-eye');
+  });
+
+  
+
+  
+
+  const wrapper = document.querySelector('.wrapper');
+  const signUpLink = document.querySelector('.signUp-link');
+  const signInLink = document.querySelector('.signIn-link');
+
+  signUpLink.addEventListener('click', () => {
+      wrapper.classList.add('animate-signIn');
+      wrapper.classList.remove('animate-signUp');
+  });
+
+  signInLink.addEventListener('click', () => {
+      wrapper.classList.add('animate-signUp');
+      wrapper.classList.remove('animate-signIn');
+  });
+
+  </script>
+</body>
+</body>
+</html>

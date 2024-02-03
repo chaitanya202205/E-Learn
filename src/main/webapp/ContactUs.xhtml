@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+
+<head>
+
+	<title>Contact Page</title>
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			min-height: 100vh;
+			background: #0c192c;
+			font-family: Arial, sans-serif;
+		}
+
+		.container {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 100vh;
+			background: url('background.gif') no-repeat center center fixed;
+			background-size: cover;
+		}
+
+		.content {
+			background: rgba(255, 255, 255, 0.9);
+			border-radius: 6px;
+			padding: 20px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			text-align: center;
+			max-width: 400px;
+			margin: 0 auto;
+		}
+
+		.content h1 {
+			font-size: 24px;
+			margin-bottom: 10px;
+		}
+
+		.content p {
+			font-size: 14px;
+			margin-bottom: 20px;
+		}
+
+		.form-group {
+			margin-bottom: 10px;
+		}
+
+		.form-group label {
+			display: block;
+			font-weight: bold;
+			margin-bottom: 5px;
+		}
+
+		.form-group input,
+		.form-group textarea {
+			width: 100%;
+			padding: 8px;
+			border-radius: 4px;
+			border: 1px solid #ccc;
+		}
+
+		.form-group textarea {
+			resize: vertical;
+		}
+
+		.form-group button {
+			padding: 10px 20px;
+			border-radius: 4px;
+			border: none;
+			background-color: #4CAF50;
+			color: white;
+			font-weight: bold;
+			cursor: pointer;
+		}
+
+		.form-group button:hover {
+			background-color: #45a049;
+		}
+
+		.container12 {
+			position: relative;
+			width: 100%;
+			height: 100vh;
+			overflow: hidden;
+		}
+
+		.bubbles {
+			position: relative;
+			display: flex;
+		}
+
+		.bubbles span {
+			position: relative;
+			width: 20px;
+			height: 20px;
+			background: #4fc3dc;
+			margin: 0 4px;
+			border-radius: 50%;
+			box-shadow: 0 0 0 10px #4fc3dc44, 0 0 50px #73EF2C, 0 0 100px #4fc3dc;
+			animation: animate 15s linear infinite;
+			animation-duration: calc(100s / var(--i));
+		}
+
+		.bubbles span:nth-child(even) {
+			background: #ff2d75;
+			box-shadow: 0 0 0 10px #5D0A84, 0 0 20px #ff2d75, 0 0 100px #73EF2C;
+		}
+
+		@keyframes animate {
+			0% {
+				transform: translateY(100vh) scale(0);
+			}
+
+			100% {
+				transform: translateY(-10vh) scale(1);
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<ui:decorate template="base.xhtml">
+		<ui:define name="firstcomponent">
+
+			<div class="container12">
+				<div class="bubbles">
+					<span style="--i:1;"></span>
+					<span style="--i:12;"></span>
+					<span style="--i:29;"></span>
+					<span style="--i:20;"></span>
+					<span style="--i:23;"></span>
+					<span style="--i:45;"></span>
+					<span style="--i:8;"></span>
+					<span style="--i:12;"></span>
+					<span style="--i:23;"></span>
+					<span style="--i:18;"></span>
+					<span style="--i:33;"></span>
+					<span style="--i:11;"></span>
+					<span style="--i:23;"></span>
+					<span style="--i:65;"></span>
+					<span style="--i:21;"></span>
+					<span style="--i:26;"></span>
+					<span style="--i:87;"></span>
+					<span style="--i:12;"></span>
+					<span style="--i:14;"></span>
+					<span style="--i:16;"></span>
+					<span style="--i:18;"></span>
+					<span style="--i:19;"></span>
+					<span style="--i:17;"></span>
+					<span style="--i:15;"></span>
+					<span style="--i:13;"></span>
+					<span style="--i:11;"></span>
+					<span style="--i:9;"></span>
+					<span style="--i:8;"></span>
+					<span style="--i:6;"></span>
+					<span style="--i:12;"></span>
+					<span style="--i:14;"></span>
+					<span style="--i:16;"></span>
+					<span style="--i:18;"></span>
+					<span style="--i:19;"></span>
+					<span style="--i:17;"></span>
+					<span style="--i:15;"></span>
+					<span style="--i:13;"></span>
+					<span style="--i:11;"></span>
+					<span style="--i:9;"></span>
+					<span style="--i:8;"></span>
+					<span style="--i:6;"></span>
+                     <span style="--i:16;"></span>
+					<span style="--i:18;"></span>
+					<span style="--i:19;"></span>
+					<span style="--i:17;"></span>
+					<span style="--i:15;"></span>
+					<span style="--i:13;"></span>
+					<span style="--i:11;"></span>
+					<span style="--i:9;"></span>
+					<span style="--i:8;"></span>
+					<span style="--i:6;"></span>
+					<span style="--i:12;"></span>
+					<span style="--i:14;"></span>
+					<span style="--i:16;"></span>
+					<span style="--i:18;"></span>
+					<span style="--i:19;"></span>
+					<span style="--i:17;"></span>
+					<span style="--i:15;"></span>
+					<span style="--i:13;"></span>
+					<span style="--i:11;"></span>
+					<span style="--i:9;"></span>
+					<span style="--i:8;"></span>
+					<span style="--i:6;"></span>
+				</div>
+			
+
+			<div class="container">
+				<div class="content">
+					<h1>Contact Us</h1>
+					<p>We would love to hear from you. Please fill out the form below and we will get back to you as soon as possible.</p>
+					<form action="submitContactForm.jsp">
+						<div class="form-group">
+							<label for="name">Name:</label>
+							<input type="text" id="name" name="name" required="required" />
+						</div>
+						<div class="form-group">
+							<label for="email">Email:</label>
+							<input type="email" id="email" name="email" required="required" />
+						</div>
+						<div class="form-group">
+							<label for="message">Message:</label>
+							<textarea id="message" name="message" rows="5" required="required"></textarea>
+						</div>
+						<div class="form-group">
+							<button type="submit">Send Message</button>
+						</div>
+
+					</form>
+				</div>
+			</div>
+</div>
+		</ui:define>
+	</ui:decorate>
+</body>
+
+</html>

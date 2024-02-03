@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<head>
+    <style>
+    
+    .title span{
+	font-weight: 700;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 60px;
+	color: #2E3D49;
+}
+        .cbox {
+            position: relative;
+            width: 100%;
+            display: inline-flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cbox .det {
+            width: 250px;
+            height: 80px;
+            margin: 10px;
+            background: #fff;
+            cursor: pointer;
+        }
+
+        .cbox .det a {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 250px;
+            height: 80px;
+            padding: 0 28px;
+            border-radius: 10px;
+            border: 1px solid #FA4B37;
+            font-size: 15px;
+            color: #EDDB26;
+            font-family: cursive;
+            text-decoration: none;
+        }
+
+        .cbox .det a:hover {
+            background: linear-gradient(to right,#6F51AC,#CB36EF,#EF366B);
+            color: white;
+        }
+
+        .cbox .det a:hover img {
+            filter: brightness(100);
+        }
+
+        .cbox img {
+            width: 20px;
+            margin-right: 20px;
+        }
+
+        .service-swipe {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.7)),url("images/extra/b3.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .service-swipe .s-card img {
+            width: 100px;
+        }
+
+        .service-swipe a {
+            padding: 0;
+            margin: 40px 10px;
+        }
+
+        .service-swipe .s-card {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            align-items: center;
+            text-align: center;
+            width: 350px;
+            height: 200px;
+            box-shadow: inset 0 0 20px rgba(55,25,255,0.05),
+                        0 0 50px rgba(0,0,0,0.8);
+            border-radius: 5px;
+            cursor: pointer;
+            transition-duration: .5s;
+        }
+
+        .service-swipe .s-card p {
+            color: #f2f2f2;
+            font-size: 1.2em;
+            font-family: 'Open Sans',sans-serif;
+        }
+
+        .service-swipe .s-card:hover {
+            box-shadow: 0 0 50px rgba(65,220,255,0.9);
+            transform: translateY(-25px);
+        }
+    </style>
+</head>
+
+<body>
+    <ui:decorate template="base3.xhtml">
+        <ui:define name="dashboardcomponent">
+            <div class="title">
+               <center> <span>Popular Subjects on BrainHone🧾</span></center>
+            </div>
+            <br></br>
+            <div class="course">
+                <center>
+                    <div class="cbox">
+                        <div class="det"><a href="subjects/jee.html"><img src="images/courses/book.png" />JEE Preparation</a></div>
+                        <div class="det"><a href="subjects/gate.html"><img src="images/courses/d1.png" />GATE Preparation</a></div>
+                        <div class="det"><a href="subjects/jee.html#sample_papers"><img src="images/courses/paper.png" />Sample Papers</a></div>
+                    </div>
+                </center>
+                <div class="cbox">
+                    <div class="det"><a href="subjects/computer_courses.html"><img src="images/courses/computer.png" />Computer Courses</a></div>
+                    <div class="det"><a href="subjects/computer_courses.html#data"><img src="images/courses/data.png" />Data Structures</a></div>
+                    <div class="det"><a href="subjects/computer_courses.html#algo"><img src="images/courses/algo.png" />Algorithm</a></div>
+                    <div class="det det-last"><a href="subjects/computer_courses.html#projects"><img src="images/courses/projects.png" />Projects</a></div>
+                </div>
+            </div>
+<br></br>
+<br></br>
+            <div class="service-swipe">
+                <div class="diffSection" id="services_section">
+                    <center>
+                        <p style="font-size: 50px; padding: 100px; padding-bottom: 40px; color: #fff;">Services</p>
+                    </center>
+                </div>
+                <a href="subjects/computer_courses.html">
+                    <div class="s-card">
+                        <img src="images/icon/computer-courses.png" />
+                        <p>Free Online Computer Courses</p>
+                    </div>
+                </a>
+                <a href="subjects/jee.html">
+                    <div class="s-card">
+                        <img src="images/icon/brainbooster.png" />
+                        <p>Building Concepts for Competitive Exams</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="s-card">
+                        <img src="images/icon/online-tutorials.png" />
+                        <p>Online Video Lectures</p>
+                    </div>
+                </a>
+                <a href="subjects/jee.html#sample_papers">
+                    <div class="s-card">
+                        <img src="images/icon/papers.jpg" />
+                        <p>Sample Papers of Various Competitive Exams</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="s-card">
+                        <img src="images/icon/p3.png" />
+                        <p>Performance and Ranking Report</p>
+                    </div>
+                </a>
+                <a href="#contactus_section">
+                    <div class="s-card">
+                        <img src="images/icon/discussion.png" />
+                        <p>Discussion with Our Tutors Mentors</p>
+                    </div>
+                </a>
+                <a href="subjects/quiz.html">
+                    <div class="s-card">
+                        <img src="images/icon/q1.png" />
+                        <p>Daily Brain Teasing Questions to Improve IQ</p>
+                    </div>
+                </a>
+                <a href="#contactus_section">
+                    <div class="s-card">
+                        <img src="images/icon/help.png" />
+                        <p>24x7 Online Support</p>
+                    </div>
+                </a>
+            </div>
+            <br></br>
+            <br></br>
+            <h1><marquee style="background: linear-gradient(to right, #FA4B37, #DF2771); margin-top: 50px;" direction="left" onmouseover="this.stop()" onmouseout="this.start()" scrollamount="20">
+                <div class="marqu">“Education is the passport to the future, for tomorrow belongs to those who prepare for it today.” “Your attitude, not your aptitude, will determine your altitude.” “If you think education is expensive, try ignorance.” “The only person who is educated is the one who has learned how to learn …and change.”</div>
+            </marquee>
+            </h1>
+            <br></br>
+        </ui:define>
+    </ui:decorate>
+</body>
+
+</html>
