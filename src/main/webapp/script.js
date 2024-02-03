@@ -1,5 +1,5 @@
 /**
- * 
+ *  this program is about the E-learn , that means they can learn in this with thier respective content
  */
 
 // Changing the style of scroll bar
